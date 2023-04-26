@@ -9,9 +9,8 @@ let mainTitle = document.querySelector('.hidden');
 
 let eleButton = document.querySelector('#play');
 
-let randomNumbers = []
-
 mainTitle.innerHTML = 'Seleziona il livello di difficoltà e genera la griglia';
+
 
 eleButton.addEventListener('click', function () {
     const eleDifficulty = document.getElementById("difficulty");
@@ -24,6 +23,9 @@ eleButton.addEventListener('click', function () {
         eleGrid.classList.remove("grid-md","grid-sm");
         eleGrid.classList.add("grid");
         createGrid(100, eleGrid);
+        for (let i = 1; i <= 16; i++){
+
+        }
     } else if (value == "81") {
         eleGrid.classList.remove("grid", "grid-sm");
         eleGrid.classList.add( "grid-md");
@@ -47,33 +49,14 @@ eleButton.addEventListener('click', function () {
      }
 })
 
-for (let i = 0; i <= 16; i++) {
-    
-}
-
 // functions
 
 function createGrid(numCells) {
     eleGrid.innerHTML = '';
-
     for (let i = 0; i < numCells; i++) {
-
-        const value = getUniqueRandom (1, numCells, randomNumbers);
-
-        randomNumbers.push(value);
 
         eleGrid.innerHTML += `<div class="cell">${i + 1}<div>`
     }
-}
-
-function getUniqueRandom (min, max, arrNumbers) {
-    let rand;
-
-    do {
-        rand = Math.floor(Math.random() * (max - min + 1) ) + min;
-    } while (arrNumbers.includes(rand))
-
-    return rand;
 }
 
 
