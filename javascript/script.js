@@ -70,6 +70,7 @@ eleButton.addEventListener('click', function () {
             if (randomNumbers.includes(i + 1)) {
                 this.classList.toggle('bomb');
                 finish = true;
+                console.log(finish);
             }
         }) 
      }
