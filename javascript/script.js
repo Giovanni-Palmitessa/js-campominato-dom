@@ -15,6 +15,8 @@ let randomNumbers = [];
 
 let totalCell;
 
+let finish = false;
+
 let points = 0;
 
 mainTitle.innerHTML = 'Seleziona il livello di difficoltà e genera la griglia';
@@ -60,11 +62,14 @@ eleButton.addEventListener('click', function () {
         const cell = listCells[i];
         cell.addEventListener('click', function () {
             this.classList.toggle('clicked');
-            points++;
-            score.innerHTML = `Il tuo punteggio è: ${points}`
-
+            if (finish == false){
+                points++;
+                score.innerHTML = `Il tuo punteggio è: ${points}`
+            }
+            
             if (randomNumbers.includes(i + 1)) {
                 this.classList.toggle('bomb');
+                finish = true;
             }
         }) 
      }
