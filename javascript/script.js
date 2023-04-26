@@ -13,10 +13,6 @@ let randomNumbers = []
 
 mainTitle.innerHTML = 'Seleziona il livello di difficoltà e genera la griglia';
 
-const value = getUniqueRandom (1, numCells, randomNumbers);
-
-    arrPresentRandoms.push(value);
-
 eleButton.addEventListener('click', function () {
     const eleDifficulty = document.getElementById("difficulty");
     let value = eleDifficulty.options[eleDifficulty.selectedIndex].value;
@@ -52,8 +48,7 @@ eleButton.addEventListener('click', function () {
 })
 
 for (let i = 0; i <= 16; i++) {
-    randomNumbers.push(value);
-    console.log(randomNumbers);
+    
 }
 
 // functions
@@ -63,7 +58,9 @@ function createGrid(numCells) {
 
     for (let i = 0; i < numCells; i++) {
 
-        
+        const value = getUniqueRandom (1, numCells, randomNumbers);
+
+        randomNumbers.push(value);
 
         eleGrid.innerHTML += `<div class="cell">${i + 1}<div>`
     }
