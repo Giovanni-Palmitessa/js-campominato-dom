@@ -55,10 +55,20 @@ function createGrid(numCells) {
     const arrPresentRandoms = [];
     for (let i = 0; i < numCells; i++) {
 
-        
+        const value = getUniqueRandom (1, numCells, arrPresentRandoms)
 
         eleGrid.innerHTML += `<div class="cell">${i + 1}<div>`
     }
+}
+
+function getUniqueRandom (min, max, arrNumbers) {
+    let rand;
+
+    do {
+        rand = Math.floor(Math.random() * (max - min + 1) ) + min;
+    } while (arrNumbers.includes(rand))
+
+    return rand;
 }
 
 
