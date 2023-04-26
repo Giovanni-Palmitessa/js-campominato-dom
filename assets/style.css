@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img{
+    width: 100px;
+}
+
+.logo h1{
+    font-size: 2.5rem;
+}
+
+#play{
+    padding: 0.3rem 1rem;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    padding: 2rem;
+}
+
+.grid{
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aquamarine;
+    box-sizing: content-box;
+}
+
+.hidden{
+    font-size: 2.5rem;
+    margin-inline: auto;
+    padding-top: 4rem;
+}
+
+.cell{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.clicked{
+    background-color: darkgoldenrod;
+}
+
+footer{
+    padding: 2rem;
+}
+
+/* FOR 81 CELLS */
+
+.grid-md{
+    width: 900px;
+    height: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aquamarine;
+    box-sizing: content-box;
+}
+
+/* FOR 49 CELLS */
+
+.grid-sm{
+    width: 700px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aquamarine;
+    box-sizing: content-box;
+}
+
+
