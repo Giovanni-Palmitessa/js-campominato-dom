@@ -30,6 +30,8 @@ eleButton.addEventListener('click', function () {
     
     mainTitle.innerHTML = '';
 
+    score.innerHTML = `Il tuo punteggio è: ${points}`;
+
     finish = false;
 
     randomNumbers = [];
@@ -67,6 +69,7 @@ eleButton.addEventListener('click', function () {
                 if (randomNumbers.includes(i + 1)) {
                     this.classList.toggle('bomb');
                     finish = true;
+                    score.innerHTML = `Hai perso! Il tuo punteggio è: ${points}`
                     console.log(finish);
                 } else {
                     points++;
