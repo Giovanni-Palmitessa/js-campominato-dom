@@ -25,7 +25,7 @@ eleButton.addEventListener('click', function () {
         eleGrid.classList.add("grid");
         createGrid(100, eleGrid);
         let numbers = Math.floor(Math.random() * (100 - 1 + 1) ) + 1;
-        
+
         for (let i = 1; i <= 16; i++){
             randomNumbers.push(numbers);
             console.log(randomNumbers);
@@ -62,7 +62,7 @@ function createGrid(numCells) {
         eleGrid.innerHTML += `<div class="cell">${i + 1}<div>`
     }
 }
-
+  
 
 
 
