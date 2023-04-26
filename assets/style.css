@@ -71,6 +71,10 @@ main{
     background-color: darkgoldenrod;
 }
 
+.bomb{
+    background-color: red;
+}
+
 footer{
     padding: 2rem;
 }

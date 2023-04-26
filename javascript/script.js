@@ -55,6 +55,10 @@ eleButton.addEventListener('click', function () {
         cell.addEventListener('click', function () {
             this.classList.toggle('clicked');
             console.log('Hai cliccato la cella numero: ' + (i + 1));
+
+            if (randomNumbers.includes(i + 1)) {
+                this.classList.toggle(bomb);
+            }
         }) 
      }
 })
