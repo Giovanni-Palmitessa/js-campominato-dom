@@ -54,10 +54,8 @@ eleButton.addEventListener('click', function () {
         const cell = listCells[i];
         cell.addEventListener('click', function () {
             this.classList.toggle('clicked');
+            console.log('Hai cliccato la cella numero: ' + this.innerHTML);
         }) 
-     }
-     
-     for (let i = 1; i <= 100; i++) {
      }
 })
 
