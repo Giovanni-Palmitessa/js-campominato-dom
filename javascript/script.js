@@ -60,7 +60,6 @@ eleButton.addEventListener('click', function () {
         const cell = listCells[i];
         cell.addEventListener('click', function () {
             this.classList.toggle('clicked');
-            console.log('Hai cliccato la cella numero: ' + (i + 1));
             points++;
             score.innerHTML = `Il tuo punteggio è: ${points}`
 

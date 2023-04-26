@@ -76,6 +76,11 @@ main{
     background-color: red;
 }
 
+.score{
+    font-size: 3rem;
+    padding-top: 2rem;
+}
+
 footer{
     padding: 2rem;
 }
