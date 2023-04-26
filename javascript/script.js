@@ -57,7 +57,7 @@ eleButton.addEventListener('click', function () {
             console.log('Hai cliccato la cella numero: ' + (i + 1));
 
             if (randomNumbers.includes(i + 1)) {
-                this.classList.toggle(bomb);
+                this.classList.toggle('bomb');
             }
         }) 
      }
