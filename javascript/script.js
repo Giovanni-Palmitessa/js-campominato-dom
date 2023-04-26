@@ -7,6 +7,8 @@ let eleGrid = document.querySelector('.grid');
 
 let mainTitle = document.querySelector('.hidden');
 
+let score = document.querySelector('.score');
+
 let eleButton = document.querySelector('#play');
 
 let randomNumbers = [];
@@ -25,6 +27,8 @@ eleButton.addEventListener('click', function () {
     console.log(value);
     
     mainTitle.innerHTML = '';
+
+    
 
     randomNumbers = [];
 
@@ -58,6 +62,7 @@ eleButton.addEventListener('click', function () {
             this.classList.toggle('clicked');
             console.log('Hai cliccato la cella numero: ' + (i + 1));
             points++;
+            score.innerHTML = `Il tuo punteggio è: ${points}`
 
             if (randomNumbers.includes(i + 1)) {
                 this.classList.toggle('bomb');
