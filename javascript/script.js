@@ -9,9 +9,13 @@ let mainTitle = document.querySelector('.hidden');
 
 let eleButton = document.querySelector('#play');
 
+let randomNumbers = [];
+
+let totalCell;
+
 mainTitle.innerHTML = 'Seleziona il livello di difficoltà e genera la griglia';
 
-let randomNumbers = [];
+
 
 eleButton.addEventListener('click', function () {
     const eleDifficulty = document.getElementById("difficulty");
@@ -20,25 +24,29 @@ eleButton.addEventListener('click', function () {
     
     mainTitle.innerHTML = '';
 
+    randomNumbers = [];
+
     if (value == "100") {
         eleGrid.classList.remove("grid-md","grid-sm");
         eleGrid.classList.add("grid");
-        createGrid(100, eleGrid);
-        let numbers = Math.floor(Math.random() * (100 - 1 + 1) ) + 1;
-
-        for (let i = 1; i <= 16; i++){
-            randomNumbers.push(numbers);
-            console.log(randomNumbers);
-        }
+        totalCell = 100;
     } else if (value == "81") {
         eleGrid.classList.remove("grid", "grid-sm");
         eleGrid.classList.add( "grid-md");
-        createGrid(81, eleGrid);
+        totalCell = 81;
     } else if (value == "49") {
         eleGrid.classList.remove("grid-md", "grid");
         eleGrid.classList.add("grid-sm",);
-        createGrid(49, eleGrid);
+        totalCell = 49;
     }
+
+    createGrid(totalCell, eleGrid);
+
+    for (let i = 1; i <= 16; i++) {
+        let rand = getUniqueRandom(1, totalCell, randomNumbers);
+        randomNumbers.push(rand);
+    }
+    console.log(randomNumbers);
 
     const listCells = document.querySelectorAll('.cell');
 
@@ -61,6 +69,15 @@ function createGrid(numCells) {
 
         eleGrid.innerHTML += `<div class="cell">${i + 1}<div>`
     }
+}
+
+function getUniqueRandom (min, max, arrNumbers) {
+    let rand;
+    do {
+        rand = Math.floor(Math.random() * (max - min + 1) ) + min;
+    } while (arrNumbers.includes(rand));
+    
+    return rand;
 }
   
 
