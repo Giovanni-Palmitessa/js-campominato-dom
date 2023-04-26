@@ -30,7 +30,7 @@ eleButton.addEventListener('click', function () {
     
     mainTitle.innerHTML = '';
 
-    
+    finish = false;
 
     randomNumbers = [];
 
@@ -61,16 +61,17 @@ eleButton.addEventListener('click', function () {
     for (let i = 0; i < listCells.length; i++) {
         const cell = listCells[i];
         cell.addEventListener('click', function () {
-            this.classList.toggle('clicked');
             if (finish == false){
-                points++;
-                score.innerHTML = `Il tuo punteggio è: ${points}`
-            }
-            
-            if (randomNumbers.includes(i + 1)) {
-                this.classList.toggle('bomb');
-                finish = true;
-                console.log(finish);
+                this.classList.toggle('clicked');
+        
+                if (randomNumbers.includes(i + 1)) {
+                    this.classList.toggle('bomb');
+                    finish = true;
+                    console.log(finish);
+                } else {
+                    points++;
+                    score.innerHTML = `Il tuo punteggio è: ${points}`
+                }
             }
         }) 
      }
