@@ -47,6 +47,11 @@ eleButton.addEventListener('click', function () {
      }
 })
 
+for (let i = 0; i <= 16; i++) {
+    randomNumbers.push(value);
+    console.log(randomNumbers);
+}
+
 // functions
 
 function createGrid(numCells) {
@@ -55,7 +60,9 @@ function createGrid(numCells) {
     const arrPresentRandoms = [];
     for (let i = 0; i < numCells; i++) {
 
-        const value = getUniqueRandom (1, numCells, arrPresentRandoms)
+        const value = getUniqueRandom (1, numCells, arrPresentRandoms);
+
+        arrPresentRandoms.push(value);
 
         eleGrid.innerHTML += `<div class="cell">${i + 1}<div>`
     }
