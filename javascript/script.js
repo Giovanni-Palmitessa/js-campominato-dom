@@ -30,7 +30,9 @@ eleButton.addEventListener('click', function () {
     
     mainTitle.innerHTML = '';
 
-    score.innerHTML = `Il tuo punteggio è: ${points}`;
+    points = 0;
+
+    score.innerHTML = `Hai perso! Il tuo punteggio è: ${points}`;
 
     finish = false;
 
